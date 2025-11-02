@@ -24,7 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ Run lint (usando npx para evitar problemas de permissão)
+      # 🧩 3.1️⃣ Corrigir permissão do ESLint
+      - name: Fix ESLint permission
+        run: chmod +x ./node_modules/.bin/eslint
+
+      # 4️⃣ Run lint (usando npx)
       - name: Run Lint
         run: npx eslint . --ext .ts,.tsx
 
@@ -44,4 +48,3 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_TEAM_ID }}
           working-directory: ./
-          vercel-args: "--prod"
