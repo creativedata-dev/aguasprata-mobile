@@ -1,7 +1,7 @@
 ```markdown
 # ÁguasPrata - Mobile (Expo) + Serverless Proxy (Vercel)
 
-Esqueleto inicial do app mobile React Native (Expo) para a store `aguasprata` no ambiente commercestable, incluindo uma função serverless para chamadas privadas à VTEX.
+Esqueleto inicial do app mobile React Native (Expo) para a store `aguasprata` no ambiente commercestable.
 
 ## Estrutura
 - App (Expo / TypeScript) em `./` com fontes em `src/`
