@@ -10,7 +10,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "lib": ["esnext", "dom"]
+    "lib": [
+      "esnext",
+      "dom"
+    ]
   },
-  "include": ["src", "App.tsx"]
+  "include": [
+    "src",
+    "App.tsx"
+  ],
+  "extends": "expo/tsconfig.base"
 }
