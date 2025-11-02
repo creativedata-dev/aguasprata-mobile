@@ -6,7 +6,7 @@
 "scripts": {
   "lint": "eslint .",
   "test": "echo \"No tests specified\" && exit 0",
-  "build": "echo \"React Native app — build handled by Metro or EAS\" && exit 0"
+  "build": "echo \"No build needed for Vercel Node API\" && exit 0"
 }
 ,
   "dependencies": {
