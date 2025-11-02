@@ -4,43 +4,44 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build-and-notify:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout do código
+      # 1️⃣ Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Configurar Node.js
+      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'  # ajuste conforme seu projeto
+          node-version: '18'
 
-      # 3️⃣ Instalar dependências
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ Rodar lint
+      # 4️⃣ Run lint
       - name: Run Lint
         run: npm run lint
 
-      # 5️⃣ Rodar testes (opcional)
+      # 5️⃣ Run tests
       - name: Run Tests
         run: npm test
 
-      # 6️⃣ Build do projeto (opcional)
+      # 6️⃣ Build project
       - name: Build project
         run: npm run build
 
-      # 7️⃣ Notificar Vercel
-      - name: Notify Vercel
-        uses: vercel/repository-dispatch/actions/status@v1
+      # 7️⃣ Deploy to Vercel
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v23
         with:
-          name: "Vercel - aguasprata-mobile: lint/build"
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_TEAM_ID }}
+          working-directory: ./
+          vercel-args: "--prod"
