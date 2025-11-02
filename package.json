@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
-  "scripts": {
-    "lint": "eslint . --ext .ts,.tsx"
-  },
+"scripts": {
+  "lint": "eslint .",
+  "test": "echo \"No tests specified\" && exit 0",
+  "build": "echo \"React Native app — build handled by Metro or EAS\" && exit 0"
+}
+,
   "dependencies": {
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
