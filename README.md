@@ -1,7 +1,7 @@
 ```markdown
 # ÁguasPrata - Mobile (Expo) + Serverless Proxy (Vercel)
 
-Esqueleto inicial do app mobile React Native (Expo) para a store `aguasprata` no ambiente commercestable.
+Esqueleto inicial do app mobile React Native (Expo) para a store `aguasprata` no ambiente commercesta
 
 ## Estrutura
 - App (Expo / TypeScript) em `./` com fontes em `src/`
